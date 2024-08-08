@@ -2,7 +2,7 @@ export { default as ChangePasswordPage } from './change-password.hbs?raw'
 
 const context = {
   name: 'Иван',
-  avatar: 'src/assets/images/default-avatar.svg',
+  avatar: '/images/default-avatar.svg',
   info: [
     {
       label: 'Старый пароль',
