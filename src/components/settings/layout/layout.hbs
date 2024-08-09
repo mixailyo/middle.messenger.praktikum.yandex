@@ -19,7 +19,9 @@
       <img src="{{avatar}}" width="130" height="130" alt="аватар пользователя" />
     </button>
     <h3 class="settings__name">{{name}}</h3>
-    <form>
+    {{#if editable}}
+      <form>
+    {{/if}}
       <ul class="settings__list">
         {{#each info}}
           <li class="settings__list-item">
@@ -40,7 +42,6 @@
         </div>
       </form>
     {{else}}
-      </form>
       <ul class="settings__list">
         <li class="settings__list-item">
           <a href="" page="change-data" class="settings__action">Изменить данные</a>
