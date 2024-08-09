@@ -1,0 +1,12 @@
+<div class="container">
+  {{#> Form title="Авторизация"}}
+    {{#*inline "inputs"}}
+      {{> Input name="login" label="Логин" error="Неверный логин" }}
+      {{> Input name="password" label="Пароль" }}
+    {{/inline}}
+    {{#*inline "buttons"}}
+      {{> Button label="Войти" color="primary" }}
+      {{> Button label="Зарегистрироваться" }}
+    {{/inline}}
+  {{/Form}}
+</div>
