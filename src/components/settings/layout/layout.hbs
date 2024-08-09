@@ -16,28 +16,31 @@
       {{/inline}}
     {{/Modal}}
     <button class="settings__avatar" onclick="window.changeAvatarModal.showModal()">
-      <img src="{{avatar}}" width="130" height="130" />
+      <img src="{{avatar}}" width="130" height="130" alt="аватар пользователя" />
     </button>
     <h3 class="settings__name">{{name}}</h3>
-    <ul class="settings__list">
-      {{#each info}}
-        <li class="settings__list-item">
-          <div class="settings__item">
-            <h4 class="settings__item-label">{{this.label}}</h4>
-            {{#if ../editable}}
-              <input type="text" class="settings__item-value" name="{{this.name}}" value="{{this.value}}" placeholder="{{this.placeholder}}" />
-            {{else}}
-              <p class="settings__item-value">{{this.value}}</p>
-            {{/if}}
-          </div>
-        </li>
-      {{/each}}
-    </ul>
+    <form>
+      <ul class="settings__list">
+        {{#each info}}
+          <li class="settings__list-item">
+            <div class="settings__item">
+              <h4 class="settings__item-label">{{this.label}}</h4>
+              {{#if ../editable}}
+                <input type="text" class="settings__item-value" name="{{this.name}}" value="{{this.value}}" placeholder="{{this.placeholder}}" />
+              {{else}}
+                <p class="settings__item-value">{{this.value}}</p>
+              {{/if}}
+            </div>
+          </li>
+        {{/each}}
+      </ul>
     {{#if editable}}
-      <div class="settings__actions">
-        {{> Button label="Сохранить" color="primary" }}
-      </div>
+        <div class="settings__actions">
+          {{> Button label="Сохранить" color="primary" }}
+        </div>
+      </form>
     {{else}}
+      </form>
       <ul class="settings__list">
         <li class="settings__list-item">
           <a href="" page="change-data" class="settings__action">Изменить данные</a>
