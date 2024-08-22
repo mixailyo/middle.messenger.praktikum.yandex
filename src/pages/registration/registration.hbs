@@ -1,0 +1,17 @@
+<div class="container">
+  {{#> Form title="Регистрация"}}
+    {{#*inline "inputs"}}
+      {{> Input name="email" label="Почта" }}
+      {{> Input name="login" label="Логин" }}
+      {{> Input name="first_name" label="Имя" }}
+      {{> Input name="second_name" label="Фамилия" }}
+      {{> Input name="phone" label="Телефон" }}
+      {{> Input name="password" label="Пароль" }}
+      {{> Input name="password" label="Пароль (ещё раз)" }}
+    {{/inline}}
+    {{#*inline "buttons"}}
+      {{> Button label="Зарегистрироваться" color="primary" }}
+      {{> Button label="Войти" }}
+    {{/inline}}
+  {{/Form}}
+</div>

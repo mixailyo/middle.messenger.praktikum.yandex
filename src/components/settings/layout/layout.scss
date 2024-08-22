@@ -1,0 +1,125 @@
+.settings {
+  display: flex;
+  min-height: 100dvh;
+
+  &__back {
+    padding: 18px;
+    background-color: var(--third-color);
+    border-right: 1px solid var(--border-color);
+
+    &:hover {
+      .settings__back-icon {
+        transform: translateX(-3px);
+      }
+    }
+
+    &-icon {
+      transition: 0.3s;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 60px;
+  }
+
+  &__avatar {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+  
+    &::before {
+      content: 'Поменять аватар';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+      color: #FFF;
+      text-align: center;
+      font-size: 13px;
+      
+      line-height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+  
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 20px 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    min-width: 510px;
+
+    &-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-color);
+    
+      &:last-child {
+        border-bottom: unset;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    &-label {
+      margin: 0;
+    }
+
+    &-value {
+      margin: 0 0 0 15px;
+      color: var(--text-secondary-color);
+      flex-grow: 1;
+      text-align: right;
+      border: unset;
+      outline: none;
+    }
+  }
+
+  &__actions {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__action {
+    color: var(--main-color);
+    
+  
+    &--primary {
+      color: var(--error-color);
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
