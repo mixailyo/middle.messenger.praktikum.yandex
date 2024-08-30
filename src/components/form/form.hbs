@@ -3,9 +3,13 @@
     <h2 class="form__title">{{title}}</h2>
   {{/if}}
   
-  {{> inputs}}
+  {{#each inputs}}
+    {{{this}}}
+  {{/each}}
 
   <div class="form__buttons">
-    {{> buttons}}
+    {{#each buttons}}
+      {{{this}}}
+    {{/each}}
   </div>
 </form>

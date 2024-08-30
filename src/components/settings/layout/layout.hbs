@@ -7,14 +7,7 @@
     </svg>
   </button>
   <div class="settings__main">
-    {{#> Modal name="changeAvatarModal" title="Сменить аватар"}}
-      {{#*inline "content"}}
-        <button class="settings__action">Выбрать файл на компьютере</button>
-      {{/inline}}
-      {{#*inline "actions"}}
-        {{> Button label="Применить" color="primary" }}
-      {{/inline}}
-    {{/Modal}}
+    {{{changeAvatarModal}}}
     <button class="settings__avatar" onclick="window.changeAvatarModal.showModal()">
       <img src="{{avatar}}" width="130" height="130" alt="аватар пользователя" />
     </button>
@@ -38,7 +31,7 @@
       </ul>
     {{#if editable}}
         <div class="settings__actions">
-          {{> Button label="Сохранить" color="primary" }}
+          {{{SaveButton}}}
         </div>
       </form>
     {{else}}
