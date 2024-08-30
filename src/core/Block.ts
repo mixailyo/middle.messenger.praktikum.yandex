@@ -17,7 +17,6 @@ export default class Block {
 	} as const;
 
 	private _element: HTMLElement | null = null;
-	private _meta: any = null; // Уточните тип этого свойства, если возможно
 	private readonly _id: string = nanoid(6);
 	private readonly _eventBus: EventBus<TEvents>;
 
@@ -64,20 +63,20 @@ export default class Block {
 		});
 	}
 
-	protected componentDidMount(oldProps?: Props): void {}
+	protected componentDidMount(): void {}
 
 	public dispatchComponentDidMount(): void {
 		this._eventBus.emit(Block.EVENTS.FLOW_CDM);
 	}
 
-	private _componentDidUpdate(oldProps: Props, newProps: Props): void {
-		const shouldUpdate = this.componentDidUpdate(oldProps, newProps);
+	private _componentDidUpdate(): void {
+		const shouldUpdate = this.componentDidUpdate();
 		if (shouldUpdate) {
 			this._render();
 		}
 	}
 
-	protected componentDidUpdate(oldProps: Props, newProps: Props): boolean {
+	protected componentDidUpdate(): boolean {
 		return true;
 	}
 

@@ -71,7 +71,7 @@ class Form extends Block {
 	validationForm(): boolean {
 		let isValid = true;
 
-		for (const [name, validation] of Object.entries(this.props.validation)) {
+		for (const [name] of Object.entries(this.props.validation)) {
 			if (!this.validationInput(name)) {
 				isValid = false;
 			}

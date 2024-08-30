@@ -97,7 +97,7 @@ class RegistrationPage extends Block {
 							'Телефон должен содержать от 10 до 15 цифр и может начинаться с плюса',
 					},
 				},
-				onSubmit: (e) => {
+				onSubmit: () => {
 					// console.log(e)
 				},
 			}),
