@@ -1,1 +1,1 @@
-export { default as ChangeDataPage } from './change-data.ts'
+export { default as ChangeDataPage } from './change-data.ts';

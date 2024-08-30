@@ -1,1 +1,1 @@
-export { default as SettingsPage } from './settings.ts'
+export { default as SettingsPage } from './settings.ts';

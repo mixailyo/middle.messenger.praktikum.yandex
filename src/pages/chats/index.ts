@@ -1,2 +1,2 @@
-import './chats.scss'
+import './chats.scss';
 export { default as ChatsPage } from './chats.ts';

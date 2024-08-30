@@ -1,1 +1,1 @@
-export { default as ChangePasswordPage } from './change-password.ts'
+export { default as ChangePasswordPage } from './change-password.ts';
