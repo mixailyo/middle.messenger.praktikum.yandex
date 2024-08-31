@@ -27,7 +27,7 @@ class SettingsLayout extends Block {
 				editable: props.editable,
 				info: props.info,
 				validation: props.validation,
-			})
+			}),
 		});
 	}
 

@@ -52,7 +52,7 @@ class Form extends Block {
 		const field = formData.get(name) as string;
 
 		if (validation(field, this.props.validation[name])) {
-			this.setInputError(name, '')
+			this.setInputError(name, '');
 		} else {
 			this.setInputError(name, this.props.validation[name].errorText);
 			return false;

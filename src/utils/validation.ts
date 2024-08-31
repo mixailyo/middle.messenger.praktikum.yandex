@@ -4,12 +4,15 @@ export interface ValidationRule {
 	errorText: string;
 }
 
-export function validation(value: string, validationRule: ValidationRule): boolean {
-  const { required, pattern } = validationRule;
+export function validation(
+	value: string,
+	validationRule: ValidationRule
+): boolean {
+	const { required, pattern } = validationRule;
 
-  if ((!value && required) || (pattern && !pattern.test(value))) {
-    return false;
-  }
+	if ((!value && required) || (pattern && !pattern.test(value))) {
+		return false;
+	}
 
-  return true;
+	return true;
 }
