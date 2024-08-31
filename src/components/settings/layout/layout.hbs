@@ -21,7 +21,7 @@
             <div class="settings__item">
               <h4 class="settings__item-label">{{this.label}}</h4>
               {{#if ../editable}}
-                <input type="text" class="settings__item-value" name="{{this.name}}" value="{{this.value}}" placeholder="{{this.placeholder}}" />
+                <input type="text" onblur="{{validationInput()}}" class="settings__item-value" name="{{this.name}}" value="{{this.value}}" placeholder="{{this.placeholder}}" />
               {{else}}
                 <p class="settings__item-value">{{this.value}}</p>
               {{/if}}

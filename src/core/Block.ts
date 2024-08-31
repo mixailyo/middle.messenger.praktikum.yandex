@@ -23,6 +23,8 @@ export default class Block {
 	public props: Props;
 	public children: Record<string, Block | Block[]>;
 
+	private _events: Record<string, EventListener> = {};
+
 	constructor(propsWithChildren: Props = {}) {
 		const eventBus = new EventBus<TEvents>();
 		const { props, children } = this._getChildrenAndProps(propsWithChildren);
@@ -38,8 +40,19 @@ export default class Block {
 		const { events = {} } = this.props;
 
 		Object.keys(events).forEach((eventName) => {
-			this._element?.addEventListener(eventName, events[eventName]);
+			const handler = events[eventName];
+			this._element?.addEventListener(eventName, handler);
+			this._events[eventName] = handler;
 		});
+	}
+
+	private _removeEvents(): void {
+		if (this._element) {
+			Object.keys(this._events).forEach((eventName) => {
+				const handler = this._events[eventName];
+				this._element?.removeEventListener(eventName, handler);
+			});
+		}
 	}
 
 	private _registerEvents(eventBus: EventBus<TEvents>): void {
@@ -115,6 +128,8 @@ export default class Block {
 	private _render(): void {
 		const propsAndStubs = this._generatePropsAndStubs();
 		const newElement = this._createAndCompileTemplate(propsAndStubs);
+
+		this._removeEvents();
 
 		this._replaceStubsWithChildren(newElement);
 
