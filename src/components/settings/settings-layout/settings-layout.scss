@@ -85,6 +85,17 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		position: relative;
+
+		&-error {
+			position: absolute;
+			right: 0;
+			font-size: 8px;
+			font-weight: 400;
+			color: var(--error-color);
+			transform: translateY(100%);
+			transform-origin: top;
+		}
 
 		&-label {
 			margin: 0;

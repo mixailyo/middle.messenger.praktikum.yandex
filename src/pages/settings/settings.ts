@@ -1,4 +1,4 @@
-import { SettingsLayout } from '../../components/settings/layout';
+import { SettingsLayout } from '../../components/settings/settings-layout';
 import Block from '../../core/Block';
 import template from './settings.hbs?raw';
 
@@ -9,6 +9,7 @@ class SettingsPage extends Block {
 		super({
 			...props,
 			SettingsLayout: new SettingsLayout({
+				editable: false,
 				name: 'Иван',
 				avatar: '/images/default-avatar.svg',
 				info: [

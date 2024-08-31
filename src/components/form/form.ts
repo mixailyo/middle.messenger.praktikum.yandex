@@ -4,12 +4,7 @@ import { Input } from '../input';
 import { Button } from '../button';
 import { InputProps } from '../input/input';
 import { ButtonProps } from '../button/button';
-
-interface ValidationRule {
-	required: boolean;
-	pattern?: RegExp;
-	errorText: string;
-}
+import { validation, ValidationRule } from '../../utils/validation';
 
 interface FormProps {
 	title?: string;
@@ -54,15 +49,13 @@ class Form extends Block {
 
 	validationInput(name: string): boolean {
 		const formData = new FormData(this.element as HTMLFormElement);
-		const field = formData.get(name);
-		const validation = this.props.validation as Record<string, ValidationRule>;
-		const { required, pattern, errorText } = validation[name];
+		const field = formData.get(name) as string;
 
-		if ((!field && required) || (pattern && !pattern.test(field as string))) {
-			this.setInputError(name, errorText);
-			return false;
+		if (validation(field, this.props.validation[name])) {
+			this.setInputError(name, '')
 		} else {
-			this.setInputError(name, '');
+			this.setInputError(name, this.props.validation[name].errorText);
+			return false;
 		}
 
 		return true;

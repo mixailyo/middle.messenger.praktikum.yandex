@@ -1,18 +1,16 @@
 import Block from '../../../core/Block';
-import { Button } from '../../button';
+import { ValidationRule } from '../../../utils/validation';
 import { Modal } from '../../modal';
-import template from './layout.hbs?raw';
+import SettingsForm from '../settings-form/settings-form';
+import { SettingsInfoItemProps } from '../settings-info-item/settings-info-item';
+import template from './settings-layout.hbs?raw';
 
 interface SettingsLayoutProps {
-	editable?: boolean;
+	editable: boolean;
 	name: string;
 	avatar: string;
-	info: {
-		label: string;
-		value: string;
-		placeholder?: string;
-		name?: string;
-	}[];
+	info: Omit<SettingsInfoItemProps, 'editable'>[];
+	validation: Record<string, ValidationRule>;
 }
 
 class SettingsLayout extends Block {
@@ -25,10 +23,11 @@ class SettingsLayout extends Block {
 				content:
 					'<button class="settings__action">Выбрать файл на компьютере</button>',
 			}),
-			SaveButton: new Button({
-				label: 'Сохранить',
-				color: 'primary',
-			}),
+			SettingsForm: new SettingsForm({
+				editable: props.editable,
+				info: props.info,
+				validation: props.validation,
+			})
 		});
 	}
 

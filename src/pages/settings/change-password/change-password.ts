@@ -1,4 +1,4 @@
-import { SettingsLayout } from '../../../components/settings/layout';
+import { SettingsLayout } from '../../../components/settings/settings-layout';
 import Block from '../../../core/Block';
 import template from './change-password.hbs?raw';
 
@@ -31,6 +31,20 @@ class ChangePasswordPage extends Block {
 						placeholder: 'Повторите новый пароль',
 					},
 				],
+				validation: {
+					oldPassword: {
+						required: true,
+						pattern: new RegExp('^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,40}$'),
+						errorText:
+							'Пароль должен содержать от 8 до 40 символов, включать хотя бы одну заглавную букву и одну цифру',
+					},
+					newPassword: {
+						required: true,
+						pattern: new RegExp('^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{8,40}$'),
+						errorText:
+							'Пароль должен содержать от 8 до 40 символов, включать хотя бы одну заглавную букву и одну цифру',
+					},
+				},
 			}),
 		});
 	}

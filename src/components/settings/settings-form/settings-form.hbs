@@ -1,0 +1,28 @@
+<div>
+  {{#if editable}}
+    <form>
+  {{/if}}
+    <ul class="settings__list">
+      {{#each SettingsInfoItems}}
+        {{{this}}}
+      {{/each}}
+    </ul>
+  {{#if editable}}
+      <div class="settings__actions">
+        {{{SaveButton}}}
+      </div>
+    </form>
+  {{else}}
+    <ul class="settings__list">
+      <li class="settings__list-item">
+        <a href="" page="change-data" class="settings__action">Изменить данные</a>
+      </li>
+      <li class="settings__list-item">
+        <a href="" page="change-password" class="settings__action">Изменить пароль</a>
+      </li>
+      <li class="settings__list-item">
+        <button class="settings__action settings__action--primary">Выйти</button>
+      </li>
+    </ul>
+  {{/if}}
+</div>
