@@ -1,36 +1,36 @@
 :root {
-  --main-color: #3369f3;
-  --hover-color: #5680ec;
-  --second-color: #e4edfd;
-  --error-color: #ff2f2f;
-  --text-color: #1e1e1e;
-  --text-secondary-color: #999;
-  --third-color: #FBFBFB;
-  --border-color: #EAEAEA;
+	--main-color: #3369f3;
+	--hover-color: #5680ec;
+	--second-color: #e4edfd;
+	--error-color: #ff2f2f;
+	--text-color: #1e1e1e;
+	--text-secondary-color: #999;
+	--third-color: #fbfbfb;
+	--border-color: #eaeaea;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  color: var(--text-color);
-  font-size: 13px;
-  line-height: 1;
-  font-weight: 500;
+	margin: 0;
+	font-family: Montserrat, sans-serif;
+	color: var(--text-color);
+	font-size: 13px;
+	line-height: 1;
+	font-weight: 500;
 }
 
 button {
-  background: unset;
-  padding: 0;
-  border: unset;
-  cursor: pointer;
+	background: unset;
+	padding: 0;
+	border: unset;
+	cursor: pointer;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }

@@ -1,0 +1,13 @@
+<button class="chats-card">
+  <img src="{{avatar}}" class="chats-card__avatar" width="47" height="47">
+  <div class="chats-card__main">
+    <h3 class="chats-card__title">{{title}}</h3>
+    <p class="chats-card__last-message">{{lastMessage}}</p>
+  </div>
+  <div class="chats-card__info">
+    <p class="chats-card__date">{{date}}</p>
+    {{#if unreadMessagesCounter}}
+      <p class="chats-card__unread">{{unreadMessagesCounter}}</p>
+    {{/if}}
+  </div>
+</button>

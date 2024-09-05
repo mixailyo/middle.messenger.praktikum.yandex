@@ -1,0 +1,11 @@
+<li class="settings__list-item">
+  <div class="settings__item">
+    <h4 class="settings__item-label">{{label}}</h4>
+    {{#if editable}}
+      {{{SettingsInput}}}
+      <p class="settings__item-error"></p>
+    {{else}}
+      <p class="settings__item-value">{{value}}</p>
+    {{/if}}
+  </div>
+</li>
